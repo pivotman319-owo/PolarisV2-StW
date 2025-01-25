@@ -3,7 +3,7 @@ This is a private fork of [Polaris](https://github.com/PolarisV2/Polaris) that I
 
 ## Screenshots
 ![Zone gamemode working offline in a custom Unreal 4.16 map](/images/FortniteClient-Win64-Shipping_2021-06-17_17-25-41.png)
-![Ditto, on the Onboarding Fort map](/images/FortniteClient-Win64-Shipping_2021-06-17_17-25-41.png)
+![Ditto, on the Onboarding Fort map](/images/FortniteClient-Win64-Shipping_2021-06-13_16-32-26.png)
 ![Explicit inventory support with working quickbars](/images/FortniteClient-Win64-ShippingDebugClient_2021-06-19_18-17-27.png)
 
 ## Disclaimer
