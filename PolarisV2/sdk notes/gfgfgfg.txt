@@ -1,0 +1,8 @@
+
+				else if (pFunction->GetName().find("BndEvt__StartButton_K2Node_ComponentBoundEvent_0_CommonButtonClicked__DelegateSignature") != std::string::npos)
+				{
+					std::string sAthenaMissionGen = "MissionGen_Athena";
+					gpAthena->m_bIsWaitingForLoadingScreen = true;
+					static_cast<SDK::UFortCheatManager*>(Globals::gpPlayerController->CheatManager)->DebugLoadingScreen(SDK::FString(std::wstring(sAthenaMissionGen.begin(), sAthenaMissionGen.end()).c_str()));
+					Globals::gpPlayerController->SwitchLevel(TEXT("Athena_Faceoff"));
+				}

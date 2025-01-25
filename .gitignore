@@ -349,6 +349,6 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# Fortnite (SDK)
-**/SDK.hpp
-**/SDK
+# Fortnite (SDK) - this is now in a separate submodule called "PolarisV2-StW-SDK"
+# **/SDK.hpp
+# **/SDK

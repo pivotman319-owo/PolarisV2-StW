@@ -1,3 +1,7 @@
 [submodule "PolarisV2/imgui"]
 	path = PolarisV2/imgui
 	url = https://github.com/ocornut/imgui.git
+
+[submodule "PolarisV2/SDK"]
+	path = PolarisV2/SDK
+	url = https://github.com/pivotman319-owo/PolarisV2-StW-SDK.git
