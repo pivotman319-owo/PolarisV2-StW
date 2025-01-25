@@ -1,12 +1,10 @@
-### UPDATE: After people attempting to revive the project without authorization, We've added a license that prevents you from using our branding. Other than that, you are free to use, modify and distribute our code as long as you comply with our [LICENSE](https://github.com/PolarisV2/Polaris/blob/main/LICENSE).
+# PolarisV2 for Save the World
+Will fill this in and push the proper sources later...
 
+### Restrictions
+PolarisV2 is licensed under the BSD-2 Clause license, as is the case for this version of the codebase. You are not authorized to use Polaris branding in your own forks.
 
-# PolarisV2
-They said to think back, but I think we went a bit too far.
-
-# Building
-Add an __**SDK**__ (software development kit) to your Polaris instance.
-You might need to fix your SDK the first time you set up the Polaris codebase by undefining PF_MAX in FN_CoreUObject_Classes.hpp.
+You are free to use, modify and distribute our code so long as you comply with the original's [license](https://github.com/PolarisV2/Polaris/blob/main/LICENSE).
 
 # Libraries
 | Library       | License       | Usage                                                     |
