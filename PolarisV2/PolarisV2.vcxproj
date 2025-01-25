@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Release [Beta]|x64">
@@ -83,7 +83,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,6 +105,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,11 +142,18 @@
     <ClCompile Include="about_window.cpp" />
     <ClCompile Include="athena_pawn.cpp" />
     <ClCompile Include="athena_plate.cpp" />
+    <ClCompile Include="bot_pawn.cpp" />
     <ClCompile Include="changelog_window.cpp" />
+    <ClCompile Include="choice_menu.cpp" />
+    <ClCompile Include="creative_category.cpp" />
+    <ClCompile Include="creative_menu.cpp" />
+    <ClCompile Include="creative_plate.cpp" />
     <ClCompile Include="directory_utils.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="base_plate.cpp" />
+    <ClCompile Include="equip.cpp" />
     <ClCompile Include="error_utils.cpp" />
+    <ClCompile Include="farmstead_bot_pawn.cpp" />
     <ClCompile Include="farmstead_pawn.cpp" />
     <ClCompile Include="farmstead_plate.cpp" />
     <ClCompile Include="frontend_plate.cpp" />
@@ -159,31 +168,53 @@
     <ClCompile Include="peh_plate.cpp" />
     <ClCompile Include="peh_table.cpp" />
     <ClCompile Include="plate.cpp" />
+    <ClCompile Include="player_category.cpp" />
     <ClCompile Include="program.cpp" />
+    <ClCompile Include="SDK\FN_AthenaQuickbarPrimary_functions.cpp" />
+    <ClCompile Include="SDK\FN_FortniteUI_functions.cpp" />
+    <ClCompile Include="SDK\FN_QuickbarSlot_functions.cpp" />
+    <ClCompile Include="SDK\FN_UMG_functions.cpp" />
     <ClCompile Include="sdk_utils.cpp" />
     <ClCompile Include="SDK\FN_Basic.cpp" />
     <ClCompile Include="SDK\FN_CoreUObject_functions.cpp" />
     <ClCompile Include="SDK\FN_Engine_functions.cpp" />
     <ClCompile Include="SDK\FN_FortniteGame_functions.cpp" />
+    <ClCompile Include="inventory.cpp" />
+    <ClCompile Include="quickbars.cpp" />
+    <ClCompile Include="category.cpp" />
     <ClCompile Include="table.cpp" />
     <ClCompile Include="ui_renderer.cpp" />
     <ClCompile Include="ui_window.cpp" />
     <ClCompile Include="watermark.cpp" />
+    <ClCompile Include="windows_category.cpp" />
+    <ClCompile Include="window_category.cpp" />
     <ClCompile Include="world_inspector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="about_window.h" />
     <ClInclude Include="athena_pawn.h" />
     <ClInclude Include="athena_plate.h" />
+    <ClInclude Include="bot_pawn.h" />
     <ClInclude Include="build.h" />
     <ClInclude Include="base_plate.h" />
     <ClInclude Include="changelog_window.h" />
+    <ClInclude Include="choice_menu.h" />
+    <ClInclude Include="creative_category.h" />
+    <ClInclude Include="creative_menu.h" />
+    <ClInclude Include="creative_plate.h" />
     <ClInclude Include="directory_utils.h" />
+    <ClInclude Include="equip.h" />
     <ClInclude Include="error_utils.h" />
+    <ClInclude Include="farmstead_bot_pawn.h" />
     <ClInclude Include="farmstead_pawn.h" />
     <ClInclude Include="farmstead_plate.h" />
     <ClInclude Include="frontend_plate.h" />
     <ClInclude Include="globals.h" />
+    <ClInclude Include="inventory_offset_fixes.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="player_category.h" />
+    <ClInclude Include="quickbars.h" />
+    <ClInclude Include="inventory.h" />
     <ClInclude Include="imgui_text_extension.h" />
     <ClInclude Include="main_window.h" />
     <ClInclude Include="pawn.h" />
@@ -192,11 +223,16 @@
     <ClInclude Include="program.h" />
     <ClInclude Include="SDK.hpp" />
     <ClInclude Include="plate.h" />
+    <ClInclude Include="SDK\FN_UMG_classes.hpp" />
+    <ClInclude Include="category.h" />
     <ClInclude Include="table.h" />
     <ClInclude Include="sdk_utils.h" />
+    <ClInclude Include="trap_build.h" />
     <ClInclude Include="ui_renderer.h" />
     <ClInclude Include="ui_window.h" />
     <ClInclude Include="watermark.h" />
+    <ClInclude Include="windows_category.h" />
+    <ClInclude Include="window_category.h" />
     <ClInclude Include="world_inspector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

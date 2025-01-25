@@ -50,9 +50,6 @@
     <Filter Include="UI\Renderer">
       <UniqueIdentifier>{810e235e-a48c-4402-aef0-6d3da7c14626}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tables\Plates\Farmstead">
-      <UniqueIdentifier>{9ed2ec0b-a63e-4963-ab74-3180b7f32bdd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI\Extensions">
       <UniqueIdentifier>{d8b4d04d-d840-4b9d-93ad-e976ccb6bad6}</UniqueIdentifier>
     </Filter>
@@ -77,9 +74,6 @@
     <Filter Include="Pawn\Pawns\Athena">
       <UniqueIdentifier>{e66c5246-8a94-4d03-a99f-55b04d8c2b5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Pawn\Pawns\Farmstead">
-      <UniqueIdentifier>{af725836-dac5-4299-8292-5c6a898ed62d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI\Window\Windows\World Inspector">
       <UniqueIdentifier>{4828f76c-1dd5-4f34-92dc-09354dd0c308}</UniqueIdentifier>
     </Filter>
@@ -88,6 +82,57 @@
     </Filter>
     <Filter Include="UI\Window\Windows\Changelog Window">
       <UniqueIdentifier>{f49e568a-860a-4a16-83ea-3ccdb0f2533b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inventory">
+      <UniqueIdentifier>{61300b7d-62a9-40e7-b379-71bbfd6b0941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Third Party\JSON">
+      <UniqueIdentifier>{ff324944-2672-4f95-946b-d05f2b28c0be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Creative Menu">
+      <UniqueIdentifier>{80858ca5-33eb-4c20-8711-83c243d562c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inventory\Equipping">
+      <UniqueIdentifier>{a520d6cd-bb93-412f-91e4-a6392851a544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pawn\Pawns\BotPawn">
+      <UniqueIdentifier>{7c0a8da8-6739-4f62-ba71-f69c6662aa45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{2811638c-9ad2-4b27-a977-42169f490385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\OffsetFixes">
+      <UniqueIdentifier>{8202df7d-86a1-42a1-8252-a9db80f1cc15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\Plates\Creative">
+      <UniqueIdentifier>{2a32369c-553b-4618-9f0b-6bf752401ba7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Choice Menu">
+      <UniqueIdentifier>{cb2add31-2334-4539-b9a8-20fb636794b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Main Window\Category">
+      <UniqueIdentifier>{234a26fa-b7a2-4f98-92f5-7857e201635e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Main Window\Category\Categories">
+      <UniqueIdentifier>{83c3b41d-267f-44b4-902e-dcde5650a416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Main Window\Category\Categories\Player">
+      <UniqueIdentifier>{d2ba7182-bea5-4dc4-a207-93854fc46185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Main Window\Category\Categories\Window">
+      <UniqueIdentifier>{6c8c4eca-7dfb-44fe-9a7b-62fdb481f6b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Window\Windows\Main Window\Category\Categories\Creative">
+      <UniqueIdentifier>{24c88286-6ef3-4b14-a003-e6017efb8fb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\Plates\StW">
+      <UniqueIdentifier>{c4517f7a-d039-47ce-a4e4-0f161a203bd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pawn\Pawns\StW">
+      <UniqueIdentifier>{425b3fac-5367-474b-b72f-a30587faf7c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pawn\Pawns\BotPawn\StW Bot Pawn">
+      <UniqueIdentifier>{3cbd1f71-e832-470e-a8d5-a9e8e00d7571}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -162,12 +207,6 @@
     <ClCompile Include="main_window.cpp">
       <Filter>UI\Window\Windows\Main Window</Filter>
     </ClCompile>
-    <ClCompile Include="farmstead_plate.cpp">
-      <Filter>Tables\Plates\Farmstead</Filter>
-    </ClCompile>
-    <ClCompile Include="farmstead_pawn.cpp">
-      <Filter>Pawn\Pawns\Farmstead</Filter>
-    </ClCompile>
     <ClCompile Include="about_window.cpp">
       <Filter>UI\Window\Windows\About Window</Filter>
     </ClCompile>
@@ -185,6 +224,61 @@
     </ClCompile>
     <ClCompile Include="changelog_window.cpp">
       <Filter>UI\Window\Windows\Changelog Window</Filter>
+    </ClCompile>
+    <ClCompile Include="inventory.cpp">
+      <Filter>Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="quickbars.cpp">
+      <Filter>Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="creative_menu.cpp">
+      <Filter>UI\Window\Windows\Creative Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\FN_UMG_functions.cpp">
+      <Filter>Third Party\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\FN_QuickbarSlot_functions.cpp">
+      <Filter>Third Party\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\FN_FortniteUI_functions.cpp">
+      <Filter>Third Party\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\FN_AthenaQuickbarPrimary_functions.cpp">
+      <Filter>Third Party\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="equip.cpp">
+      <Filter>Inventory\Equipping</Filter>
+    </ClCompile>
+    <ClCompile Include="bot_pawn.cpp">
+      <Filter>Pawn\Pawns\BotPawn</Filter>
+    </ClCompile>
+    <ClCompile Include="creative_plate.cpp">
+      <Filter>Tables\Plates\Creative</Filter>
+    </ClCompile>
+    <ClCompile Include="choice_menu.cpp">
+      <Filter>UI\Window\Windows\Choice Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="category.cpp">
+      <Filter>UI\Window\Windows\Main Window\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="player_category.cpp">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_category.cpp" />
+    <ClCompile Include="window_category.cpp">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="creative_category.cpp">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Creative</Filter>
+    </ClCompile>
+    <ClCompile Include="farmstead_plate.cpp">
+      <Filter>Tables\Plates\StW</Filter>
+    </ClCompile>
+    <ClCompile Include="farmstead_pawn.cpp">
+      <Filter>Pawn\Pawns\StW</Filter>
+    </ClCompile>
+    <ClCompile Include="farmstead_bot_pawn.cpp">
+      <Filter>Pawn\Pawns\BotPawn\StW Bot Pawn</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -240,12 +334,6 @@
     <ClInclude Include="main_window.h">
       <Filter>UI\Window\Windows\Main Window</Filter>
     </ClInclude>
-    <ClInclude Include="farmstead_plate.h">
-      <Filter>Tables\Plates\Farmstead</Filter>
-    </ClInclude>
-    <ClInclude Include="farmstead_pawn.h">
-      <Filter>Pawn\Pawns\Farmstead</Filter>
-    </ClInclude>
     <ClInclude Include="about_window.h">
       <Filter>UI\Window\Windows\About Window</Filter>
     </ClInclude>
@@ -263,6 +351,63 @@
     </ClInclude>
     <ClInclude Include="changelog_window.h">
       <Filter>UI\Window\Windows\Changelog Window</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="quickbars.h">
+      <Filter>Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="creative_menu.h">
+      <Filter>UI\Window\Windows\Creative Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Third Party\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\FN_UMG_classes.hpp">
+      <Filter>Third Party\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="equip.h">
+      <Filter>Inventory\Equipping</Filter>
+    </ClInclude>
+    <ClInclude Include="bot_pawn.h">
+      <Filter>Pawn\Pawns\BotPawn</Filter>
+    </ClInclude>
+    <ClInclude Include="trap_build.h">
+      <Filter>Models\OffsetFixes</Filter>
+    </ClInclude>
+    <ClInclude Include="creative_plate.h">
+      <Filter>Tables\Plates\Creative</Filter>
+    </ClInclude>
+    <ClInclude Include="choice_menu.h">
+      <Filter>UI\Window\Windows\Choice Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="category.h">
+      <Filter>UI\Window\Windows\Main Window\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="player_category.h">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_category.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="window_category.h">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="creative_category.h">
+      <Filter>UI\Window\Windows\Main Window\Category\Categories\Creative</Filter>
+    </ClInclude>
+    <ClInclude Include="farmstead_plate.h">
+      <Filter>Tables\Plates\StW</Filter>
+    </ClInclude>
+    <ClInclude Include="farmstead_pawn.h">
+      <Filter>Pawn\Pawns\StW</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory_offset_fixes.h">
+      <Filter>Models\OffsetFixes</Filter>
+    </ClInclude>
+    <ClInclude Include="farmstead_bot_pawn.h">
+      <Filter>Pawn\Pawns\BotPawn\StW Bot Pawn</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

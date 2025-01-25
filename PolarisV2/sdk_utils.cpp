@@ -1,23 +1,17 @@
-/*
-* Copyright (c) 2021, Polaris All rights reserved.
-*
-* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-* INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-* IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
-* OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
 #include "sdk_utils.h"
 #include "error_utils.h"
 
+struct FActorSpawnParameters
+{
+	unsigned char Unk00[0x40];
+};
 static SDK::UObject* (*StaticLoadObject)(SDK::UClass* ObjectClass, SDK::UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, uint32_t LoadFlags, SDK::UPackageMap* Sandbox, bool bAllowObjectReconciliation);
 template<class T>
 static T* LoadObject(SDK::UObject* Outer, const TCHAR* Name, const TCHAR* Filename = nullptr, uint32_t LoadFlags = 0, SDK::UPackageMap* Sandbox = nullptr)
 {
 	return (T*)StaticLoadObject(T::StaticClass(), Outer, Name, Filename, LoadFlags, Sandbox, true);
 }
+SDK::AActor* (*SpawnActorLong)(SDK::UWorld* World, SDK::UClass* Class, SDK::FVector* Location, SDK::FRotator* Rotation, FActorSpawnParameters& SpawnParameters);
 namespace polaris
 {
 	namespace utilities
@@ -47,6 +41,12 @@ namespace polaris
 			return NULL;
 		}
 
+		SDK::AActor* SDKUtils::SpawnActor(SDK::UClass* Class, SDK::FVector* Location, SDK::FRotator* Rotation)
+		{
+			FActorSpawnParameters params{};
+			auto actor = SpawnActorLong((*globals::gpWorld), Class, Location, Rotation, params);
+			return actor;
+		}
 		SDK::UObject* SDKUtils::FindOrLoadObject(const std::string PathName)
 		{
 			SDK::UClass* Class = SDK::UClass::StaticClass();
@@ -163,6 +163,13 @@ namespace polaris
 
 			globals::StaticConstructObject_Internal = reinterpret_cast<decltype(globals::StaticConstructObject_Internal)>(pStaticConstructObject_InternalAddress);
 			StaticLoadObject = reinterpret_cast<decltype(StaticLoadObject)>(BaseAddress() + 0x142E560);
+
+			auto pSpawnActorOffset = SDKUtils::FindPattern("\xE8\x00\x00\x00\x00\x0F\x10\x04\x3E", "x????xxxx");
+			if (!pSpawnActorOffset) {
+				ErrorUtils::ThrowException(L"Finding pattern for SpawnActor has failed. Please relaunch Fortnite and try again!");
+			}
+
+			SpawnActorLong = reinterpret_cast<decltype(SpawnActorLong)>(pSpawnActorOffset + 5 + *reinterpret_cast<uint32_t*>(pSpawnActorOffset + 1));
 		}
 		VOID SDKUtils::InitGlobals()
 		{
@@ -175,6 +182,7 @@ namespace polaris
 		}
 		VOID SDKUtils::InitPatches()
 		{
+			/*
 			// Item ownership check patching - allows weapons and other GameplayAbilites to properly function.
 			auto pAbilityPatchAddress = SDKUtils::FindPattern
 			(
@@ -192,6 +200,14 @@ namespace polaris
 				DWORD dwTemp;
 				VirtualProtect(pAbilityPatchAddress, 16, dwProtection, &dwTemp);
 			}
+			*/
+			auto pSpawnActorOffset = SDKUtils::FindPattern("\xE8\x00\x00\x00\x00\x0F\x10\x04\x3E", "x????xxxx");
+			if (!pSpawnActorOffset) {
+				MessageBox(NULL, static_cast<LPCWSTR>(L"Finding pattern for SpawnActor has failed, please re-open Fortnite and try again!"), static_cast<LPCWSTR>(L"Error"), MB_ICONERROR);
+				ExitProcess(EXIT_FAILURE);
+			}
+
+			SpawnActorLong = reinterpret_cast<decltype(SpawnActorLong)>(pSpawnActorOffset + 5 + *reinterpret_cast<uint32_t*>(pSpawnActorOffset + 1));
 		}
 	}
 }

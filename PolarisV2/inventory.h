@@ -1,20 +1,10 @@
-/*
-* Copyright (c) 2021, Polaris All rights reserved.
-*
-* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-* INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-* IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
-* OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
 #include "peh_plate.h"
 #include "sdk_utils.h"
 #include "athena_pawn.h"
+#include "quickbars.h"
 
 namespace polaris::inventory
 {
@@ -29,20 +19,28 @@ namespace polaris::inventory
         SDK::FGuid* m_pgFloorBuild;
         SDK::FGuid* m_pgStairBuild;
         SDK::FGuid* m_pgRoofBuild;
+        SDK::FGuid* m_pgSentryDef;
+        SDK::FGuid* m_gCommandoGuid;
         SDK::UFortEditToolItemDefinition* m_pEditToolDef;
         SDK::UFortWeaponMeleeItemDefinition* m_pPickaxeDef;
         SDK::UFortBuildingItemDefinition* m_pWallBuildDef;
         SDK::UFortBuildingItemDefinition* m_pFloorBuildDef;
         SDK::UFortBuildingItemDefinition* m_pStairBuildDef;
         SDK::UFortBuildingItemDefinition* m_pRoofBuildDef;
+        SDK::UFortDecoItemDefinition* m_pSentryDef;
         SDK::ABuildingActor* m_pTrapC;
         bool bTrapDone = false;
         std::map<SDK::FGuid*, SDK::UFortWeaponItemDefinition*> m_mItems;
+        std::map<SDK::FGuid*, SDK::UFortGadgetItemDefinition*> m_mGadgets;
+        std::map<SDK::FGuid*, SDK::UFortDecoItemDefinition*> m_mDecos;
+        std::map<SDK::FGuid*, SDK::UFortItemDefinition*> m_mEssentials;
         std::map<SDK::FGuid*, SDK::UFortTrapItemDefinition*> m_mTraps;
         int iInventoryIteration = 0;
         SDK::TArray<class SDK::UFortWorldItem*>* pItemInsts;
+        inventory::quickbars* m_pQuickbars;
 
         void SetupInventory(); //!< SetupInventory initializes the inventory.
+        void CraftItem(SDK::FString* ItemId, int PostCraftSlot, bool bIsQuickCraft);
     };
 }
-#endif // !INVENTORY_H
+#endif // INVENTORY_H
