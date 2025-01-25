@@ -350,8 +350,8 @@ namespace polaris
                 utilities::SDKUtils::InitSdk();
                 utilities::SDKUtils::InitGlobals();
 
-                //globals::gpPlayerController->SwitchLevel(TEXT("Zone_Onboarding_FarmsteadFort"));
-                globals::gpPlayerController->SwitchLevel(TEXT("/Game/VehicleAdvBP/Maps/VehicleAdvExampleMap"));
+                globals::gpPlayerController->SwitchLevel(TEXT("Zone_Onboarding_FarmsteadFort"));
+                //globals::gpPlayerController->SwitchLevel(TEXT("/Game/VehicleAdvBP/Maps/VehicleAdvExampleMap"));
             }
 
             void FarmsteadPlate::Initialize()
